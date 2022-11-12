@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using RestWithASPNETUdemy.Services;
+using RestWithASPNETUdemy.Services.Implementations;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,8 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Dependency injection 
+builder.Services.AddScoped<IPersonService, PersonServiceImplementation>();
+
 var app = builder.Build();
-var scope = app.Services.CreateScope();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

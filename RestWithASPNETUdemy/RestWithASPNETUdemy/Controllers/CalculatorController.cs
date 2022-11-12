@@ -4,7 +4,7 @@ using RestWithASPNETUdemy.Helpers;
 namespace RestWithASPNETUdemy.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CalculatorController : ControllerBase
     {
         private readonly ILogger<CalculatorController> _logger;
@@ -15,7 +15,7 @@ namespace RestWithASPNETUdemy.Controllers
         }
 
         [HttpGet("sum/{firstNumber}/{secondNumber}")]
-        public IActionResult sum(string firstNumber, string secondNumber)
+        public IActionResult Sum(string firstNumber, string secondNumber)
         {
             if (Helper.IsNumeric(firstNumber) && Helper.IsNumeric(secondNumber))
             {
@@ -26,7 +26,7 @@ namespace RestWithASPNETUdemy.Controllers
         }
 
         [HttpGet("div/{firstNumber}/{secondNumber}")]
-        public IActionResult div(string firstNumber, string secondNumber)
+        public IActionResult Div(string firstNumber, string secondNumber)
         {
             if (Helper.IsNumeric(firstNumber) && Helper.IsNumeric(secondNumber))
             {
@@ -36,8 +36,8 @@ namespace RestWithASPNETUdemy.Controllers
             return BadRequest("Invalid Input.");
         }
     
-        [HttpGet("mul/{firstNumber}/{secondNumber}")]
-        public IActionResult mul(string firstNumber, string secondNumber)
+        [HttpGet("mult/{firstNumber}/{secondNumber}")]
+        public IActionResult Mult(string firstNumber, string secondNumber)
         {
             if (Helper.IsNumeric(firstNumber) && Helper.IsNumeric(secondNumber))
             {
@@ -48,7 +48,7 @@ namespace RestWithASPNETUdemy.Controllers
         }
     
         [HttpGet("sub/{firstNumber}/{secondNumber}")]
-        public IActionResult sub(string firstNumber, string secondNumber)
+        public IActionResult Sub(string firstNumber, string secondNumber)
         {
             if (Helper.IsNumeric(firstNumber) && Helper.IsNumeric(secondNumber))
             {
@@ -58,8 +58,8 @@ namespace RestWithASPNETUdemy.Controllers
             return BadRequest("Invalid Input.");
         }
 
-        [HttpGet("media/{firstNumber}/{secondNumber}")]
-        public IActionResult media(string firstNumber, string secondNumber)
+        [HttpGet("mean/{firstNumber}/{secondNumber}")]
+        public IActionResult Mean(string firstNumber, string secondNumber)
         {
             if (Helper.IsNumeric(firstNumber) && Helper.IsNumeric(secondNumber))
             {
@@ -69,8 +69,8 @@ namespace RestWithASPNETUdemy.Controllers
             return BadRequest("Invalid Input.");
         }
     
-        [HttpGet("raiz/{firstNumber}/{secondNumber}")]
-        public IActionResult raiz(string firstNumber, string secondNumber)
+        [HttpGet("sqrt/{firstNumber}/{secondNumber}")]
+        public IActionResult Sqrt(string firstNumber, string secondNumber)
         {
             if (Helper.IsNumeric(firstNumber) && Helper.IsNumeric(secondNumber))
             {
